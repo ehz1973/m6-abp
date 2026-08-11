@@ -38,7 +38,6 @@ export const profileUserView = (req, res) => {
     }
 }
 
-
 export const userEditView = (req, res) => {
     try {
 

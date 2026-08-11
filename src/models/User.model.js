@@ -11,8 +11,6 @@ class User {
         this.id = id;
     }
 
-    //MÉTODO DE INSTANCIA
-
     save(){
         const data = readFileJson(filename);
 
@@ -31,7 +29,6 @@ class User {
 
         return true;
     }
-
 
     update(){
         const data = readFileJson(filename);
@@ -64,10 +61,6 @@ class User {
         writeFileJson(filename, data);
         return true;
     }
-
-
-    //MÉTODO ESTÁTICO
-
 
     static findAll(){
         const { users } = readFileJson(filename);

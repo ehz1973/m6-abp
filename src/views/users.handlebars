@@ -1,7 +1,7 @@
 <div id="view-users">
 
     <header class="py-3">
-        <h1 class="text-center">Lista de usuarios de la App</h1>
+        <h1 class="text-center">Lista de usuarios</h1>
     </header>
 
     <main class="container">
@@ -42,3 +42,29 @@
     </main>
 
 </div>
+
+<script>
+document.getElementById("table-body")?.addEventListener("click", async function(event) {
+    const button = event.target.closest(".btn-danger");
+    if (!button) return;
+    const idUser = button.getAttribute("data-id-user");
+    const response = await fetch("/api/users/" + idUser);
+    const data = await response.json();
+    if (response.ok) {
+        const confirmDel = confirm(`¿Eliminar el usuario ${data.user.firstname} ${data.user.lastname} con email: ${data.user.email}?`);
+        if (confirmDel) {
+            const deleteResponse = await fetch("/api/users/" + idUser, { method: "DELETE" });
+            const deleteData = await deleteResponse.json();
+            if (deleteResponse.ok) {
+                alert("Usuario eliminado correctamente.");
+                location.reload();
+            } else {
+                alert("Error al eliminar el usuario: " + deleteData.message);
+            }
+        }
+    } else {
+        alert("Error al obtener el usuario: " + data.message);
+        console.error("Error en el servidor. Código:", response.status);
+    }
+});
+</script>

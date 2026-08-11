@@ -25,8 +25,7 @@ export const getUserById = (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message:
-                "No se pude obtener la data del usuario, intente más tarde.",
+            message: "No se pude obtener la data del usuario, intente más tarde."
         });
     }
 };
@@ -110,7 +109,6 @@ export const updateUser = (req, res) => {
         });
     }
 };
-
 
 export const deleteUser = (req, res) => {
     try {

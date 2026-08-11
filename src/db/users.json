@@ -1,12 +1,6 @@
 {
     "users": [
         {
-            "firstname": "Bastian",
-            "lastname": "Valdebenito",
-            "email": "bastian.valdebenito@hotmail.com",
-            "id": 1
-        },
-        {
             "firstname": "Sofía",
             "lastname": "Valdebenito",
             "email": "sofia.valdebenito@gmail.com",
