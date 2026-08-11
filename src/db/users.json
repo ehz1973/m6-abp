@@ -1,12 +1,6 @@
 {
     "users": [
         {
-            "firstname": "Macarena",
-            "lastname": "Araya",
-            "email": "macarena.romero@gmail.com",
-            "id": "658ade64-f4c3-4f10-9f35-fd57b33e98fc"
-        },
-        {
             "firstname": "Sofía",
             "lastname": "Romero",
             "email": "sofia.romero@gmail.com",

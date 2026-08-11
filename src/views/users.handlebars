@@ -45,6 +45,7 @@
 
 <script>
 document.getElementById("table-body")?.addEventListener("click", async function(event) {
+    // Delegación: maneja clicks de cualquier botón de eliminar dentro del tbody.
     const button = event.target.closest(".btn-danger");
     if (!button) return;
     const idUser = button.getAttribute("data-id-user");

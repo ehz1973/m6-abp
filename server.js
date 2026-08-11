@@ -14,7 +14,7 @@ const argv = yargs(process.argv.slice(2))
 
 const PORT = argv.port;
 
-
+// Inicia el servidor con el puerto proporcionado por línea de comandos.
 app.listen(PORT, ()=> {
     console.log("Servidor escuchando en http://localhost:" + PORT);
 });

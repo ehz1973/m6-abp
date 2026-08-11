@@ -4,6 +4,7 @@ import * as viewsController from "../controllers/views.controller.js";
 
 const router = express.Router();
 
+// Rutas que renderizan vistas del frontend.
 router.get("/", viewsController.homeView);
 
 router.get("/users", viewsController.usersView);

@@ -5,6 +5,7 @@ if (formAddUser) {
         const btnsForm = document.getElementById("btns-form");
         const boxAlert = document.getElementById("box-alert");
 
+        // Muestra el indicador de carga y oculta los botones mientras se procesa el envío.
         loader.classList.remove("d-none");
         btnsForm.classList.add("d-none");
 

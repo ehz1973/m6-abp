@@ -58,6 +58,7 @@ export const createUser = (req, res) => {
                 .json({ message: "No se proporcionan los campos requeridos." });
         }
 
+        // Crea el usuario en memoria antes de persistirlo.
         const newUser = new User(firstname, lastname, email);
 
         newUser.save();
@@ -88,6 +89,7 @@ export const updateUser = (req, res) => {
         if (!user)
             return res.status(404).json({ message: "Usuario no encontrado." });
 
+        // Solo actualiza los campos que se envían en la petición.
         user.firstname = firstname || user.firstname;
         user.lastname = lastname || user.lastname;
         user.email = email || user.email;

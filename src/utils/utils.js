@@ -6,6 +6,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+/**
+ * Lee un archivo JSON desde la carpeta de base de datos y lo parsea.
+ *
+ * @param {string} filename - Nombre del archivo JSON a leer.
+ * @returns {Object} El contenido parseado del archivo JSON.
+ * @throws {Error} Si el archivo no existe.
+ */
 export const readFileJson = (filename) => {
     let pathFile = path.join(__dirname, "..", "db", filename);
 
@@ -18,6 +25,14 @@ export const readFileJson = (filename) => {
 }
 
 
+/**
+ * Escribe datos en un archivo JSON dentro de la carpeta de base de datos.
+ *
+ * @param {string} filename - Nombre del archivo JSON a escribir.
+ * @param {Object} data - Datos que se escribirán en el archivo.
+ * @returns {boolean} True si la escritura se completó correctamente.
+ * @throws {Error} Si el archivo no existe.
+ */
 export const writeFileJson = (filename, data) => {
     let pathFile = path.join(__dirname, "..", "db", filename);
 

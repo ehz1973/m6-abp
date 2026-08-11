@@ -12,6 +12,7 @@ router.get("/:id", userController.getUserById);
 
 router.get("/email/:email", userController.getUserByEmail);
 
+// Valida que la petición tenga body antes de crear o actualizar.
 router.post("/", validateBody, userController.createUser);
 
 router.put("/:id", validateBody, userController.updateUser);

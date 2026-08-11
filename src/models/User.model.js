@@ -14,6 +14,7 @@ class User {
     save(){
         const data = readFileJson(filename);
 
+        // Comprueba si ya existe un usuario con el mismo email.
         const exist = data.users.some(u => u.email == this.email);
 
         if(exist){
@@ -41,6 +42,7 @@ class User {
             throw error;
         }
 
+        // Reemplaza el usuario existente con la versión actualizada.
         data.users[indexUser] = this;
         writeFileJson(filename, data);
         return true;
@@ -56,6 +58,7 @@ class User {
             throw error;
         }
 
+        // Elimina el usuario del arreglo persistido.
         data.users.splice(indexUser, 1);
 
         writeFileJson(filename, data);
@@ -80,6 +83,7 @@ class User {
 
     static findByEmail(email){
         const { users } = readFileJson(filename);
+        // Normaliza mayúsculas y espacios para evitar errores de coincidencia.
         email = email.toLowerCase().trim();
         let user = users.find(u=> u.email.toLowerCase().trim() == email);
 
