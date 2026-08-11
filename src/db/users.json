@@ -1,14 +1,8 @@
 {
     "users": [
         {
-            "firstname": "Sofía",
-            "lastname": "Valdebenito",
-            "email": "sofia.valdebenito@gmail.com",
-            "id": "fba9f22a-b620-4911-9f1b-c925ddc5f2e4"
-        },
-        {
             "firstname": "Macarena",
-            "lastname": "Romero",
+            "lastname": "Araya",
             "email": "macarena.romero@gmail.com",
             "id": "658ade64-f4c3-4f10-9f35-fd57b33e98fc"
         },

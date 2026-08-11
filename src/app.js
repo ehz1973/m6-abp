@@ -2,6 +2,8 @@ import express from "express";
 import { create } from "express-handlebars";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import morgan from "morgan";
+import fs from "node:fs";
 
 import userRoutes from "./routes/users.routes.js";
 import viewsRoutes from "./routes/views.routes.js";
@@ -22,6 +24,11 @@ app.set("views", path.resolve(__dirname, "./views"));
 app.use(express.json()); //req.body
 app.use(express.urlencoded({extended:true})); //req.body
 app.use(express.static("public"));
+const accessLogStream = fs.createWriteStream(
+  path.resolve(__dirname, "../logs/access.log"), 
+  { flags: 'a' }
+);
+app.use(morgan("combined", { stream: accessLogStream }));
 /*
 app.use((req, res, next) => {
 	console.log(req.method, req.url);
